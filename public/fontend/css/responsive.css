@@ -1,0 +1,396 @@
+@media (max-width: 1991px){
+	.entry-content .table-responsive {
+	    margin-bottom: 24px;
+	}
+}
+@media (max-width: 991px){
+	.header-main .flex-right,
+	.menu-bottom-top,
+	.header-bottom{
+		display: none;
+	}
+	.tab-slider .thu-vien,
+	.header-main .header-inner {
+	    display:block;
+	}
+	.header-main .logo-header {
+		margin:0 auto;
+	}
+	.chuong-trinh .secondary:hover,
+	.chuong-trinh .list-post:hover {
+	    transform: scale3d(1, 1, 1);
+	}
+	.why-us .list-why-us{
+		padding:20px 0;
+	}
+	.why-us ul li .so {
+	    width: 42px;
+	    height: 42px;
+	}
+	.tab-slider .nav-tabs{
+		padding-right: 15px;
+	}
+	.tab-slider .nav-tabs li {
+		margin-bottom: 10px;
+	}
+	.news-post .col-right .tin-doc .box-image {
+	        width: 162px;
+	        float: left;
+	}
+	.news-post .col-right .tin-doc .box-text, .news-post .col-right .tin-doc .box-image{
+		display: inline-block;
+	}
+	.news-post .col-right .tin-doc .box-text{
+		  width: calc(100% - 162px);
+		  width: -moz-calc(100% - 162px);
+		  width: -webkit-calc(100% - 162px);
+	}
+	.news-post .post-item {
+		margin-bottom: 28px;
+	}
+    .slider-wrapper{
+    	margin-bottom: 30px;
+    }
+    .pagenavi{
+    	padding:20px 0;
+    }
+    .comments-area p.form-submit{
+    	margin-bottom: 40px;
+    }
+    .header-main{
+    	    box-shadow: 1px 1px 5px #ccc;
+    }
+    .form-lien-he {
+	    margin-bottom: 30px;
+	}
+	.dang-ky-dang-nhap{
+		margin-right: 0;
+		margin-left: 0;
+	}
+	#part-1 .overview-img img{
+		height: 300px;
+		width: 100%;
+		object-fit: cover;
+	}
+	#part-1 .overview-img{
+		margin-bottom: 20px;
+	}
+	.feature {
+	    padding-right: 15px;
+	    padding-left: 15px;
+	}
+	.projectintro-topbar{
+		display: block;
+	}
+	.wrapper-sd .right-tile-s .abouts-list-text{
+         padding-top: 20px;
+	}
+	.summer-study {
+	        height: 310px;
+	}
+	.link-page-lets nav.breadcrumb a:nth-child(1) {
+	   color: #ef4b88;
+	}
+	.wrapper-sd .left-video a img{
+       width: 100%;
+	}
+	.our-mission-vision .col-left {
+	    text-align: left;
+	    border-right:none;
+	}
+	.our-mission-vision .col-left .mission-our,
+	.our-mission-vision .col-right .vision-our{
+		padding:0;
+	}
+	.summer-study .title-tour {
+	    font-size: 30px;
+	}
+	.summer-study p {
+	    font-size: 14px;
+	}
+	.summer-study a.read-more {
+	    width: 180px;
+	    height: 42px;
+	    line-height: 44px;
+	    font-size: 20px;
+	}
+	
+    .widget-area{
+    	clear: both;
+
+    }
+    .annalink-tour-trograms .list-trograms .more-link {
+	    width: 100%;
+	    min-height: 15px;
+	    font-size: 19px;
+	    line-height: 35px;
+	}
+    .contact-us-left {
+	    float: none;
+
+	}
+	.form-lien-he button {
+	    height: 40px;
+	}
+	.maps-to-box .searchform-maps .maps-text .texds {
+	    margin-bottom: 12px;
+	}
+
+}
+@media (max-width: 800px){
+    img{
+    	height: auto;
+    }
+    #part-5 .list-group {
+	    width: 100%;
+	    margin: auto;
+	}
+	#part-6 form {
+	    display:block;
+	}
+	#part-6 form .btn-submit,
+	#part-6 form .form-group {
+	    width: 50%;
+	    float: left;
+	}
+}
+@media (max-width: 767px){
+	.form-diw .form-inline .form-group label,
+	.form-diw .form-inline .form-group .form-controls,
+	.comments-area .comment-form-author, .comments-area .comment-form-email, .comments-area .comment-form-url{
+		width: 100%;
+		float:none;
+	}
+	#part-5 .list-group .list-group-item span {
+	    width: 71px;
+	}
+    .banner-title .summer-title{
+    	display: block;
+    }
+    .banner-title .summer-study .col-left {
+	    text-align: left;
+	    border-right: none;
+	}
+	.banner-title .summer-study .col-left .title-tour{
+		font-size: 46px;
+		margin-bottom: 5px;
+		text-align: center;
+	}
+	.banner-title .summer-study .col-left .title-tour br{
+        display: none;
+	}
+	.banner-title .summer-study {
+	    height: 330px;
+
+	}
+	.banner-title .summer-study .col-right{
+		text-align: center;
+	}
+	.menu-sqs .nav-pills > li > a{
+		border: 0;
+		border-bottom: 1px solid #fff;
+	}
+	.menu-sqs .nav-pills li:last-child a{
+		border-right: 0;
+		border-bottom:0;
+	}
+	.menu-sqs .nav-pills li:first-child{
+		margin-top: 5px;
+	}
+	.entry-content .pagination li a,
+    .entry-content .pagination .page-numbers{
+    	    padding: 3px 9px;
+    }
+    .portal-page .row-search-clos {
+	    display: block;
+	}
+	.portal-page .search-form .flex-row{
+		width: 100%;
+	}
+	.portal-page .row-search-clos .col-sm-select {
+		width: 100%;
+		margin-bottom: 10px;
+		margin-right: 0;
+	}
+	.comments-area .form-submit input {
+	    height: 44px;
+	}
+	.news-related .loop-inner .slider-baiviet .list-inner .thumb-outter img{
+		width: 100%;
+	}
+	.flex{
+		display: block;
+	}
+    .annalink-tour-trograms .list-trograms:hover {
+	    transform: scale3d(1, 1, 1);
+	    transition: 0.4s;
+	}
+	.section-heading .text-md-left h2{
+		font-size: 32px;
+	}
+	.section-heading .text-md-left h2 br{
+		display: none;
+	}
+	.section-heading .text-md-left .divider {
+	    height: 8px;
+	}
+	.section-heading #tab-content .panel-default > .panel-heading a {
+	    font-size: 16px;
+	}
+}
+@media (max-width: 500px){
+	.news-post .post-item .box-image img,
+	.tab-slider .slider-gallery img {
+	   
+	    height: 350px;
+	    width: 100%;
+	}
+	.news-post .col-right .tin-doc .box-image {
+	    width: 93px;
+	}
+	.news-post .col-right .tin-doc .box-image img{
+		    height: 62px;
+		    object-fit: cover;
+	}
+	.news-post .col-right .tin-doc .box-text{
+		  width: calc(100% - 93px);
+		  width: -moz-calc(100% - 93px);
+		  width: -webkit-calc(100% - 93px);
+	}
+	.slider-cam-nhan .texts.col-xs-8,
+	.slider-cam-nhan .col-inner.col-xs-4{
+		width: 100%;
+	}
+	.cam-nhan .slider-nav-circle .slider-cam-nhan .img-inner{
+		padding-top: 20px;
+		    text-align: center;
+		padding-bottom: 20px;
+	}
+	.blog-archive .post-item .post-box-title,
+	.blog-archive .post-item .post-thumbnail{
+		width: 100%;
+		float:none;
+	}
+	.blog-archive .post-item .post-box-title{
+		padding:10px 0px;
+	}
+	.pst-cam-nha .slider-pst-cn{
+		    padding: 30px 20px 30px 20px;
+	}
+	.page-header h1.entry-title {
+	    font-size: 20px;
+	}
+	#noi-dung-cau-hoi .panel-title {
+	    font-size: 14px;
+	   
+	}
+	#noi-dung-cau-hoi .panel-title:before {
+	    left: 0px;
+	    top: 6px;
+	}
+	#part-6 form .btn-submit,
+	#part-6 form .form-group {
+	    width: 100%;
+	    float: none;
+	}
+	#part-3 .col-md-3{
+		width: 100%;
+	}
+	#part-1 .overview-img img {
+	    height: 240px;
+	}
+	.banmoe img{
+		height: 200px;
+		    object-fit: cover;
+	}
+
+	.why-choose .tab-video .nav-tabs li{
+		display: block;
+		text-align: left;
+	}
+	.why-us ul li .so {
+	    width: 73px;
+	    height: 42px;
+	}
+	.section-heading .text-md-left h2,
+	.our-mission-vision .col-left .title, .our-mission-vision .col-right .title,
+	.annalink-tour-trograms .col-inner3 h2,
+	.wrapper-sd .right-tile-s .abouts-list-text .abouts-title {
+	    font-size: 30px;
+	}
+	.section-heading .text-md-left .divider {
+	    height: 6px;
+	}
+	.summer-study .title-tour,
+	.banner-title .summer-study .col-left .title-tour {
+	    font-size: 32px;
+	    margin-bottom: 10px;
+	}
+	.banner-title .summer-study .col-right h3 {
+		    font-size: 18px;
+	}
+	.summer-study p,
+	.banner-title .summer-study .col-right p {
+	    font-size: 13px;
+	}
+	.summer-study p br,
+	.banner-title .summer-study .col-right p br{
+        display: none;
+	}
+	.title-catalog .link-tab a {
+	    padding: 8px 10px;
+	    font-size: 14px;
+	}
+	.star-rating .col-dn {
+	    width: 50%;
+	}
+	.star-rating .col-dn:nth-child(2n+1){
+		clear: left;
+	}
+	.maps-to-box .searchform-maps .maps-text .texds {
+	    font-size: 20px;
+	}
+	.maps-to-box .searchform-maps .maps-text .texds:before {
+	    background: url(../images/maps-icons.png) no-repeat;
+	    background-size: 41px;
+	}
+
+}
+@media (max-width: 480px){
+}
+@media (max-width: 370px){
+
+}
+@media (min-width: 576px){
+	.container {
+	    width: 540px;
+	    max-width: 100%;
+	}
+}
+
+@media (min-width: 768px){
+	.container {
+	    width: 720px;
+	    max-width: 100%;
+	}
+}
+@media (min-width: 992px){
+	.menu-icon,
+	.menu-responsive-overlay,
+	.menu-responsive{
+		display: none;
+	}
+	.container {
+	    width: 960px;
+	    max-width: 100%;
+	}
+}
+@media (min-width: 1200px){
+	.container {
+	    max-width: 1170px;
+	    width: 100%;
+	}
+}
+
+
+
