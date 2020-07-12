@@ -38,6 +38,7 @@ class Login extends My_Controller {
 		{
 			$this->form_validation->set_message(__FUNCTION__,'Không đăng nhập thành công');
 			return false;
+			
 		}
 	}
 }

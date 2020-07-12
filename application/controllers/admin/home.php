@@ -12,6 +12,7 @@ class Home extends My_controller {
 		$data = array();
 		$data['temp'] = 'backend/partials/content';
 		$this->load->view('backend/index', $data);
+		
 	}
 
 }

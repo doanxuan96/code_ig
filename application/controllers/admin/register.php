@@ -22,6 +22,7 @@ class Register extends My_Controller {
 					'gmail' => $this->input->post('email'),
 					'password' => md5($this->input->post('password_reg')),
 				);
+				
 				//them thanh vien vao trong csdl
 				$this->users_model->create($input);
 				$this->session->set_flashdata('mess', 'Đăng ký thành công');

@@ -22,6 +22,7 @@ class Comments extends My_Controller {
 		$this->comment_model->delete($id);
 		$this->session->set_flashdata('mess', 'Xóa bình luận thành công!');
 		redirect(admin_url('comments/list_comments'));
+		
 	}
 }
 

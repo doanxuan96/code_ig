@@ -9,10 +9,9 @@ class User extends My_Controller {
 	}
 	function check_email()
 	{
-
 		$email = $this->input->post('email');
 		$where = array('gmail'=>$email);
-    //kiểm tra điều kiện email có tồn tại trong csdl hay không
+    	//kiểm tra điều kiện email có tồn tại trong csdl hay không
 		if($this->users_model->check_exists($where))
 		{
          //trả về thông báo lỗi nếu đã tồn tại email này
