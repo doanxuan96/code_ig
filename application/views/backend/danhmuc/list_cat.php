@@ -17,8 +17,8 @@
 						<tr>
 							<td><?php echo $row->id ?></td>
 							<td><?php echo $row->name_cat ?></td>
-							<td><a href="<?php echo admin_url('danhmuc/editdanhmuc/'.$row->id) ?>">Edit</a></td>
-							<td><a href="<?php echo admin_url('danhmuc/deletedanhmuc/'.$row->id) ?>">Delete</a></td>
+							<td><a href="<?php echo admin_url('category/edit_category/'.$row->id) ?>">Edit</a></td>
+							<td><a href="<?php echo admin_url('category/delete_category/'.$row->id) ?>">Delete</a></td>
 						</tr>
 					<?php } ?>
 				</tbody>

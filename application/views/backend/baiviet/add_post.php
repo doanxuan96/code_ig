@@ -6,7 +6,7 @@
 	</div>
 	<!-- /.col-lg-12 -->
 	<div class="col-lg-7" style="padding-bottom:120px">
-		<form method="POST" action="<?php echo admin_url('baiviet/thembai'); ?>" enctype="multipart/form-data">
+		<form method="POST" action="<?php echo admin_url('posts/add_post'); ?>" enctype="multipart/form-data">
 			<div class="form-group">
 				<label>Chọn danh mục</label>
 				<select class="form-control" name="DanhMuc">

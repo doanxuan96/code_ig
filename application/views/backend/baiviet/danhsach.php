@@ -27,13 +27,16 @@
                         <td><?php echo $item->id_danhmuc ?></td>
                         <td><?php echo $item->noidung ?></td>
                         <!-- <td><?php echo $item->noibat ?></td> -->
-                        <td width="50px" class="center"><a href="<?php echo admin_url('baiviet/deletepost/'.$item->id) ?>"> Delete</a></td>
-                        <td width="50px" class="center"><a href="<?php echo admin_url('baiviet/editpost/'.$item->id) ?>">Edit</a></td>
+                        <td width="50px" class="center"><a href="<?php echo admin_url('posts/delete_post/'.$item->id) ?>"> Delete</a></td>
+                        <td width="50px" class="center"><a href="<?php echo admin_url('posts/edit_post/'.$item->id) ?>">Edit</a></td>
                     </tr>
                 <?php } ?>
 
             </tbody>
         </table>
+        <?php 
+            $this->session->flashdata('mess');
+         ?>
     </div>
     <!-- /.row -->
 </div>

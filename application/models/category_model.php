@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Danhmuc_model extends My_Model {
+class Category_model extends My_Model {
 
 	public $variable;
 

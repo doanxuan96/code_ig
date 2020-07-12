@@ -62,13 +62,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?php echo admin_url('danhmuc/themdanhmuc') ?>" class="nav-link">
+                <a href="<?php echo admin_url('category/add_category') ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Thêm danh mục</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo admin_url('danhmuc/listdanhmuc') ?>" class="nav-link">
+                <a href="<?php echo admin_url('category/list_category') ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Xem danh mục</p>
                 </a>
@@ -86,13 +86,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?php echo admin_url('baiviet/thembai') ?>" class="nav-link">
+                <a href="<?php echo admin_url('posts/add_post') ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Thêm bài viết</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo admin_url('baiviet/danhsach') ?>" class="nav-link">
+                <a href="<?php echo admin_url('posts/list_post') ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Xem bài viết</p>
                 </a>

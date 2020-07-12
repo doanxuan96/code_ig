@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Baiviet_model extends My_Model {
+class Post_model extends My_Model {
 
 	public $variable;
 

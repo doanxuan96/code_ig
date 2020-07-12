@@ -1,16 +1,16 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Baiviet extends My_controller {
+class Posts extends My_controller {
 
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('baiviet_model');
+		$this->load->model('post_model');
 	}
-	public function thembai()
+	public function add_post()
 	{
-		$this->load->model('danhmuc_model');
-		$list_cat = $this->danhmuc_model->get_list();
+		$this->load->model('category_model');
+		$list_cat = $this->category_model->get_list();
 		$data = array();
 		$data['temp'] = 'backend/baiviet/add_post';
 		$data['list_cat'] = $list_cat;
@@ -30,7 +30,7 @@ class Baiviet extends My_controller {
 			}
 			else
 			{
-				$image = $this->upload->data();
+				$_image = $this->upload->data();
 			}
 
 
@@ -41,48 +41,40 @@ class Baiviet extends My_controller {
 			$this->form_validation->set_rules('DanhMuc', 'Danh mục bài viết', '');
 			if ($this->form_validation->run() ) 
 			{
-				$tieude = $this->input->post('TieuDe');
-				$tomtat = $this->input->post('TomTat');
-				$noidung = $this->input->post('NoiDung');
-				$img =  $image['file_name'];
-				$danhmuc = $this->input->post('DanhMuc');
+				$title = $this->input->post('TieuDe');
+				$description = $this->input->post('TomTat');
+				$content = $this->input->post('NoiDung');
+				$img =  $_image['file_name'];
+				$category = $this->input->post('DanhMuc');
 
-				$input = array('tieude'=>$tieude,'noidung'=>$noidung,'tomtat'=>$tomtat,'hinhanh'=>$img,'id_danhmuc'=>$danhmuc);
-				$this->baiviet_model->create($input);
+				$input = array('tieude'=>$title,'noidung'=>$content,'tomtat'=>$description,'hinhanh'=>$img,'id_danhmuc'=>$category);
+				$this->post_model->create($input);
 				$this->session->set_flashdata('mess', 'Thêm bài viết thành công');
 			}
 		}
 
 		$this->load->view('backend/index', $data);
 	}
-	public function danhsach()
+	public function list_post()
 	{
 		$data = array();
 		$data['temp'] = 'backend/baiviet/danhsach';
-		$list = $this->baiviet_model->get_list();
+		$list = $this->post_model->get_list();
 		$data['list'] = $list;
 		$this->load->view('backend/index', $data);
 	}
-	public function editpost()
+	public function edit_post()
 	{
-		$this->load->model('danhmuc_model');
-		$this->load->model('comment_model');
+		$this->load->model('category_model');
 		$data = array();
 		$id = $this->uri->segment(4);
-		$baiviet = $this->baiviet_model->get_info($id);
-		// $this->db->SELECT ('id, idUser')->from('comments')->where('id_post', $id);
-		// $query = $this->db->get()->row();
-		// //$query1 = $query->row();
-		// $id_cmt = $query->id;
-		// $cmt = $this->comment_model->get_info($id_cmt);
-		// $data['cmt'] = $cmt;
-		$data['baiviet'] = $baiviet;
-		$list_cat = $this->danhmuc_model->get_list();
+		$_post = $this->post_model->get_info($id);
+		$data['_post'] = $_post;
+		$list_cat = $this->category_model->get_list();
 		$data['list_cat'] = $list_cat;
 		$data['temp'] = 'backend/baiviet/edit_post';
 		if($this->input->post())
 		{
-
 			$config['upload_path']          = './public/uploads/';
 			$config['allowed_types']        = 'gif|jpg|png';
 			$config['max_size']             = 1024;
@@ -97,10 +89,8 @@ class Baiviet extends My_controller {
 			}
 			else
 			{
-				$image = $this->upload->data();
+				$_image1 = $this->upload->data();
 			}
-
-
 
 			$this->form_validation->set_rules('TieuDe', 'Tiêu đề bài viết', 'required');
 			$this->form_validation->set_rules('TomTat', 'Tóm tắt bài viết', 'required');
@@ -109,29 +99,29 @@ class Baiviet extends My_controller {
 			$this->form_validation->set_rules('DanhMuc', 'Danh mục bài viết', '');
 			if ($this->form_validation->run() ) 
 			{
-				$tieude = $this->input->post('TieuDe');
-				$tomtat = $this->input->post('TomTat');
-				$noidung = $this->input->post('NoiDung');
-				$img =  $image['file_name'];
-				$danhmuc = $this->input->post('DanhMuc');
+				$title = $this->input->post('TieuDe');
+				$description = $this->input->post('TomTat');
+				$content = $this->input->post('NoiDung');
+				$_img =  $_image1['file_name'];
+				$category = $this->input->post('DanhMuc');
 
-				$input = array('tieude'=>$tieude,'noidung'=>$noidung,'tomtat'=>$tomtat,'hinhanh'=>$img,'id_danhmuc'=>$danhmuc);
-				$this->baiviet_model->update($id,$input);
+				$input = array('tieude'=>$title,'noidung'=>$content,'tomtat'=>$description,'hinhanh'=>$_img,'id_danhmuc'=>$category);
+				$this->post_model->update($id,$input);
 				$this->session->set_flashdata('mess', 'Đã sửa thành công');
 
-				$baiviet->tieude = $tieude;
-				$baiviet->tomtat = $tomtat;
-				$baiviet->noidung = $noidung;
+				$_post->tieude = $title;
+				$_post->tomtat = $description;
+				$_post->noidung = $content;
 			}
 		}
 		$this->load->view('backend/index', $data);
 	}
-	public function deletepost()
+	public function delete_post()
 	{
 		$id = $this->uri->segment(4);
-		$this->baiviet_model->delete($id);
+		$this->post_model->delete($id);
 		$this->session->set_flashdata('mess', 'Xóa bài viết thành công');
-		redirect(admin_url('baiviet/danhsach'));
+		redirect(admin_url('posts/list_post'));
 	}
 }
 
