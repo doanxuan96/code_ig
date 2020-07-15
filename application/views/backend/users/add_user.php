@@ -27,7 +27,7 @@
 		</form>
 		<?php
 		//var_dump($tt);
-		echo $this->session->flashdata('mess');
+		echo $this->session->flashdata('messenger');
 		echo form_error('username');
 		echo form_error('password');
 		echo form_error('re_password');

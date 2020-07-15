@@ -25,7 +25,7 @@ class Register extends My_Controller {
 				
 				//them thanh vien vao trong csdl
 				$this->users_model->create($input);
-				$this->session->set_flashdata('mess', 'Đăng ký thành công');
+				$this->session->set_flashdata('messenger', 'Đăng ký thành công');
 			}
 		}
 		$this->load->view('backend/register');

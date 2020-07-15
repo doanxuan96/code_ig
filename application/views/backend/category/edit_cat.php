@@ -13,7 +13,7 @@
 		</form>
 		<?php
 		echo form_error('tendanhmuc');
-		echo $this->session->flashdata('mess');
+		echo $this->session->flashdata('messenger');
 		?>
 	</div>
 </div>

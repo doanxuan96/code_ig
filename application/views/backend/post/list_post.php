@@ -24,7 +24,15 @@
                         <td><?php echo $item->id ?></td>
                         <td><?php echo $item->tieude ?></td>
                         <td><?php echo $item->tomtat ?></td>
-                        <td><?php echo $item->id_danhmuc ?></td>
+                        <td>
+                            <?php
+                            $this->load->model('category_model');
+                            $id_cat = $item->id_danhmuc;
+                            $this->db->SELECT('name_cat')->from('category_baiviet')->where('id',$id_cat);
+                            $query = $this->db->get()->row();
+                            echo $query->name_cat;
+                             ?>
+                        </td>
                         <td><?php echo $item->noidung ?></td>
                         <!-- <td><?php echo $item->noibat ?></td> -->
                         <td width="50px" class="center"><a href="<?php echo admin_url('posts/delete_post/'.$item->id) ?>"> Delete</a></td>
@@ -35,7 +43,7 @@
             </tbody>
         </table>
         <?php 
-            $this->session->flashdata('mess');
+           echo $this->session->flashdata('messenger');
          ?>
     </div>
     <!-- /.row -->

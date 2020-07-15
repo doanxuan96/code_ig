@@ -15,7 +15,7 @@ class User extends My_Controller {
 		if($this->users_model->check_exists($where))
 		{
          //trả về thông báo lỗi nếu đã tồn tại email này
-			$this->form_validation->set_message(__FUNCTION__, 'Email đã sử dụng');
+			$this->form_validation->set_messengerage(__FUNCTION__, 'Email đã sử dụng');
 			return FALSE;
 		}
 		return TRUE;
@@ -23,7 +23,7 @@ class User extends My_Controller {
 	public function add_user()
 	{
 		$data = array();
-		$data['temp'] = 'backend/users/add-user';
+		$data['temp'] = 'backend/users/add_user';
 		if($this->input->post())
 		{
 			$this->form_validation->set_rules('username', 'Tên tài khoản', 'required|is_unique[users.user_name]');
@@ -36,7 +36,7 @@ class User extends My_Controller {
 				$mail = $this->input->post('mail');
 				$input = array('user_name'=>$user,'gmail'=>$mail,'password'=>$pass);
 				$this->users_model->create($input);
-				$this->session->set_flashdata('mess', 'Thêm tài khoản thành công');
+				$this->session->set_flashdata('messenger', 'Thêm tài khoản thành công');
 			}
 		}
 		$this->load->view('backend/index', $data);
@@ -45,22 +45,22 @@ class User extends My_Controller {
 	public function list_user()
 	{
 		$data = array();
-		$data['temp'] = 'backend/users/list-user';
+		$data['temp'] = 'backend/users/list_user';
 		$list = $this->users_model->get_list();
 		$data['list'] = $list;
 		$this->load->view('backend/index', $data);
 	}
-	public function deleteuser()
+	public function delete_user()
 	{
 		$id = $this->uri->segment(4);
 		$this->users_model->delete($id);
-		$this->session->set_flashdata('mess', 'Đã xóa thành công');
+		$this->session->set_flashdata('messenger', 'Đã xóa thành công');
 		redirect(admin_url('user/list_user'));
 	}
-	public function edituser()
+	public function edit_user()
 	{
 		$data = array();
-		$data['temp'] = 'backend/users/edit-user';
+		$data['temp'] = 'backend/users/edit_user';
 		$id = $this->uri->segment(4);
 		$row = $this->users_model->get_info($id);
 		$data['row'] = $row;
@@ -76,7 +76,7 @@ class User extends My_Controller {
 				$mail = $this->input->post('email');
 				$input = array('user_name'=>$user,'gmail'=>$mail,'password'=>$pass);
 				$this->users_model->update($id,$input);
-				$this->session->set_flashdata('mess', 'Cập nhật thành công');
+				$this->session->set_flashdata('messenger', 'Cập nhật thành công');
 
 				$user = $row->user_name;
 				$pass = $row->password;

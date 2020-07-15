@@ -45,7 +45,7 @@
 		</form>
 		<?php
 		//var_dump($tt);
-		echo $this->session->flashdata('mess');
+		echo $this->session->flashdata('messenger');
 		echo form_error('TieuDe');
 		echo form_error('TomTat');
 		echo form_error('NoiDung');

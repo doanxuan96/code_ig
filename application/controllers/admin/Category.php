@@ -11,7 +11,7 @@ class Category extends My_controller {
 	public function add_category()
 	{
 		$data = array();
-		$data['temp'] = 'backend/danhmuc/add_cat';
+		$data['temp'] = 'backend/category/add_cat';
 		if ($this->input->post()) 
 		{
 			$this->form_validation->set_rules('tendanhmuc', 'Tên danh mục', 'required|is_unique[category_baiviet.name_cat]');
@@ -20,7 +20,7 @@ class Category extends My_controller {
 				$name_cat = $this->input->post('tendanhmuc');
 				$input = array('name_cat'=>$name_cat);
 				$this->category_model->create($input);
-				$this->session->set_flashdata('mess', 'Đã thêm thành công');
+				$this->session->set_flashdata('messenger', 'Đã thêm thành công');
 			}
 		}
 		$this->load->view('backend/index', $data);
@@ -28,7 +28,7 @@ class Category extends My_controller {
 	public function list_category()
 	{
 		$data= array();
-		$data['temp'] = 'backend/danhmuc/list_cat';
+		$data['temp'] = 'backend/category/list_cat';
 		$list = $this->category_model->get_list();
 		$data['list'] = $list;
 		$this->load->view('backend/index', $data);
@@ -38,7 +38,7 @@ class Category extends My_controller {
 		$data = array();
 		$id = $this->uri->segment(4);
 		$row = $this->category_model->get_info($id);
-		$data['temp'] = 'backend/danhmuc/edit_cat';
+		$data['temp'] = 'backend/category/edit_cat';
 		if($this->input->post())
 		{
 			$this->form_validation->set_rules('tendanhmuc', 'Tên danh mục', 'required|is_unique[category_baiviet.name_cat]');
@@ -46,7 +46,7 @@ class Category extends My_controller {
 				$name_cat = $this->input->post('tendanhmuc');
 				$input = array('name_cat'=>$name_cat);
 				$this->category_model->update($id,$input);
-				$this->session->set_flashdata('mess', 'Cập nhật thành công danh mục');
+				$this->session->set_flashdata('messenger', 'Cập nhật thành công danh mục');
 				$row->name_cat = $name_cat;
 			}
 		}
@@ -57,7 +57,7 @@ class Category extends My_controller {
 	{
 		$id = $this->uri->segment(4);
 		$this->category_model->delete($id);
-		$this->session->set_flashdata('mess','Đã xóa thành công');
+		$this->session->set_flashdata('messenger','Đã xóa thành công');
 		redirect(admin_url('category/list_category'));
 	}
 }

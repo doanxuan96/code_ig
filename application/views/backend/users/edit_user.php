@@ -28,7 +28,7 @@
 		echo form_error('password');
 		echo form_error('re_password');
 		echo form_error('email');
-		echo $this->session->flashdata('mess');
+		echo $this->session->flashdata('messenger');
 		?>
 	</div>
 </div>

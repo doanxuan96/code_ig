@@ -21,13 +21,13 @@
 							<td><?php echo $row->user_name ?></td>
 							<td><?php echo $row->password ?></td>
 							<td><?php echo $row->gmail ?></td>
-							<td><a href="<?php echo admin_url('user/edituser/'.$row->id) ?>">Edit</a></td>
-							<td><a href="<?php echo admin_url('user/deleteuser/'.$row->id) ?>">Delete</a></td>
+							<td><a href="<?php echo admin_url('user/edit_user/'.$row->id) ?>">Edit</a></td>
+							<td><a href="<?php echo admin_url('user/delete_user/'.$row->id) ?>">Delete</a></td>
 						</tr>
 					<?php } ?>
 				</tbody>
 			</table>
-			<?php echo $this->session->flashdata('mess'); ?>
+			<?php echo $this->session->flashdata('messenger'); ?>
 		</div>
 	</div>
 </div>

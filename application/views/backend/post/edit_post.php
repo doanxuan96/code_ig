@@ -13,7 +13,7 @@
 
 					<?php foreach ($list_cat as $list) { ?>
 						<?php 
-							if ($_post->id_danhmuc == $list->id) { ?>
+							if ($get_post->id_danhmuc == $list->id) { ?>
 								<option selected="selected" value="<?php echo $list->id ?>"><?php echo $list->name_cat ?></option>
 							<?php } else { ?>
 								<option value="<?php echo $list->id ?>"><?php echo $list->name_cat ?></option>
@@ -24,15 +24,15 @@
 			</div>
 			<div class="form-group">
 				<label>Tiêu đề</label>
-				<input class="form-control" name="TieuDe" placeholder="Nhập tiêu đề" value="<?php echo $_post->tieude ?>"/>
+				<input class="form-control" name="TieuDe" placeholder="Nhập tiêu đề" value="<?php echo $get_post->tieude ?>"/>
 			</div>
 			<div class="form-group">
 				<label>Tóm tắt</label>
-				<textarea name="TomTat" class="form-control" rows="3"><?php echo $_post->tomtat ?></textarea>
+				<textarea name="TomTat" class="form-control" rows="3"><?php echo $get_post->tomtat ?></textarea>
 			</div>
 			<div class="form-group">
 				<label>Nội dung</label>
-				<textarea name="NoiDung" class="form-control" rows="3"><?php echo $_post->noidung ?></textarea>
+				<textarea name="NoiDung" class="form-control" rows="3"><?php echo $get_post->noidung ?></textarea>
 			</div>
 			<div class="form-group">
 				<label>Hình ảnh</label>
@@ -50,7 +50,7 @@
 			<button type="submit" class="btn btn-default">Update</button>
 		</form>
 		<?php
-		echo $this->session->flashdata('mess');
+		echo $this->session->flashdata('messenger');
 		echo form_error('TieuDe');
 		echo form_error('TomTat');
 		echo form_error('NoiDung');

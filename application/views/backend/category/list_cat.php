@@ -23,7 +23,7 @@
 					<?php } ?>
 				</tbody>
 			</table>
-			<?php echo $this->session->flashdata('mess'); ?>
+			<?php echo $this->session->flashdata('messenger'); ?>
 		</div>
 	</div>
 </div>

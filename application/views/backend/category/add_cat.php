@@ -13,6 +13,6 @@
 			<button type="reset" class="btn btn-default">Làm mới</button>
 		</form>
 	</div>
-	<?php echo $this->session->flashdata('mess'); ?>
+	<?php echo $this->session->flashdata('messenger'); ?>
 	<?php echo form_error('tendanhmuc') ?>
 </div>

@@ -11,7 +11,7 @@ class Comments extends My_Controller {
 	public function list_comments()
 	{
 		$data = array();
-		$data['temp'] = 'backend/comments/list-comment';
+		$data['temp'] = 'backend/comments/list_comment';
 		$cmt = $this->comment_model->get_list();
 		$data['cmt'] = $cmt;
 		$this->load->view('backend/index', $data);
@@ -20,7 +20,7 @@ class Comments extends My_Controller {
 	{
 		$id = $this->uri->segment(4);
 		$this->comment_model->delete($id);
-		$this->session->set_flashdata('mess', 'Xóa bình luận thành công!');
+		$this->session->set_flashdata('messenger', 'Xóa bình luận thành công!');
 		redirect(admin_url('comments/list_comments'));
 		
 	}
