@@ -36,19 +36,19 @@
 	jQuery(function() {
 
 		//nội dung bài viết
-		if(CKEDITOR.instances['NoiDung']) {
-			CKEDITOR.remove(CKEDITOR.instances['NoiDung']);
+		if(CKEDITOR.instances['content']) {
+			CKEDITOR.remove(CKEDITOR.instances['content']);
 		}
 		CKEDITOR.config.width = 700;
 		CKEDITOR.config.height = 150;
-		CKEDITOR.replace('NoiDung',{});
+		CKEDITOR.replace('content',{});
 
 		// tóm tắt bài viết
-		if(CKEDITOR.instances['TomTat']) {
-			CKEDITOR.remove(CKEDITOR.instances['TomTat']);
+		if(CKEDITOR.instances['description']) {
+			CKEDITOR.remove(CKEDITOR.instances['description']);
 		}
 		CKEDITOR.config.width = 700;
 		CKEDITOR.config.height = 150;
-		CKEDITOR.replace('TomTat',{});
+		CKEDITOR.replace('description',{});
 	});
 </script>

@@ -7,12 +7,12 @@
 		<form method="POST">
 			<div class="form-group">
 				<label>Tên danh mục </label>
-				<input class="form-control" name="tendanhmuc" placeholder="Nhập tên danh mục" />
+				<input class="form-control" name="name_category" placeholder="Nhập tên danh mục" />
 			</div>
 			<button type="submit" class="btn btn-default">Thêm </button>
 			<button type="reset" class="btn btn-default">Làm mới</button>
 		</form>
 	</div>
 	<?php echo $this->session->flashdata('messenger'); ?>
-	<?php echo form_error('tendanhmuc') ?>
+	<?php echo form_error('name_category') ?>
 </div>

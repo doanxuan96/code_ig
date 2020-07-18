@@ -14,10 +14,10 @@ class Category extends My_controller {
 		$data['temp'] = 'backend/category/add_cat';
 		if ($this->input->post()) 
 		{
-			$this->form_validation->set_rules('tendanhmuc', 'Tên danh mục', 'required|is_unique[category_baiviet.name_cat]');
+			$this->form_validation->set_rules('name_category', 'Tên danh mục', 'required|is_unique[category_post.name_cat]');
 			if ($this->form_validation->run()) 
 			{
-				$name_cat = $this->input->post('tendanhmuc');
+				$name_cat = $this->input->post('name_category');
 				$input = array('name_cat'=>$name_cat);
 				$this->category_model->create($input);
 				$this->session->set_flashdata('messenger', 'Đã thêm thành công');
@@ -41,9 +41,9 @@ class Category extends My_controller {
 		$data['temp'] = 'backend/category/edit_cat';
 		if($this->input->post())
 		{
-			$this->form_validation->set_rules('tendanhmuc', 'Tên danh mục', 'required|is_unique[category_baiviet.name_cat]');
+			$this->form_validation->set_rules('name_category', 'Tên danh mục', 'required|is_unique[category_post.name_cat]');
 			if ($this->form_validation->run()) {
-				$name_cat = $this->input->post('tendanhmuc');
+				$name_cat = $this->input->post('name_category');
 				$input = array('name_cat'=>$name_cat);
 				$this->category_model->update($id,$input);
 				$this->session->set_flashdata('messenger', 'Cập nhật thành công danh mục');

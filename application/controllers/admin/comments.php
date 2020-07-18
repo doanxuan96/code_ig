@@ -16,7 +16,7 @@ class Comments extends My_Controller {
 		$data['cmt'] = $cmt;
 		$this->load->view('backend/index', $data);
 	}
-	public function delete_cmt()
+	public function delete_comment()
 	{
 		$id = $this->uri->segment(4);
 		$this->comment_model->delete($id);

@@ -24,7 +24,7 @@ class Posts extends My_controller {
 
 			$this->load->library('upload', $config);
 
-			if ( ! $this->upload->do_upload('Hinh'))
+			if ( ! $this->upload->do_upload('image'))
 			{
 				$error = $this->upload->display_errors();
 			}
@@ -34,20 +34,19 @@ class Posts extends My_controller {
 			}
 
 
-			$this->form_validation->set_rules('TieuDe', 'Tiêu đề bài viết', 'required');
-			$this->form_validation->set_rules('TomTat', 'Tóm tắt bài viết', 'required');
-			$this->form_validation->set_rules('NoiDung', 'Nội dung bài viết', 'required');
-			$this->form_validation->set_rules('Hinh', 'Ảnh đại diện bài viết', '');
-			$this->form_validation->set_rules('DanhMuc', 'Danh mục bài viết', '');
+			$this->form_validation->set_rules('title', 'Tiêu đề bài viết', 'required');
+			$this->form_validation->set_rules('description', 'Tóm tắt bài viết', 'required');
+			$this->form_validation->set_rules('content', 'Nội dung bài viết', 'required');
+			$this->form_validation->set_rules('image', 'Ảnh đại diện bài viết', '');
+			$this->form_validation->set_rules('category', 'Danh mục bài viết', '');
 			if ($this->form_validation->run() ) 
 			{
-				$title = $this->input->post('TieuDe');
-				$description = $this->input->post('TomTat');
-				$content = $this->input->post('NoiDung');
+				$title = $this->input->post('title');
+				$description = $this->input->post('description');
+				$content = $this->input->post('content');
 				$image =  $get_image['file_name'];
-				$category = $this->input->post('DanhMuc');
-
-				$input = array('tieude'=>$title,'noidung'=>$content,'tomtat'=>$description,'hinhanh'=>$image,'id_danhmuc'=>$category);
+				$category = $this->input->post('category');
+				$input = array('title'=>$title,'content'=>$content,'description'=>$description,'image'=>$image,'id_category'=>$category);
 				$this->post_model->create($input);
 				$this->session->set_flashdata('messenger', 'Thêm bài viết thành công');
 			}
@@ -83,7 +82,7 @@ class Posts extends My_controller {
 
 			$this->load->library('upload', $config);
 
-			if ( ! $this->upload->do_upload('Hinh'))
+			if ( ! $this->upload->do_upload('image'))
 			{
 				$error = $this->upload->display_errors();
 			}
@@ -92,26 +91,26 @@ class Posts extends My_controller {
 				$get_image = $this->upload->data();
 			}
 
-			$this->form_validation->set_rules('TieuDe', 'Tiêu đề bài viết', 'required');
-			$this->form_validation->set_rules('TomTat', 'Tóm tắt bài viết', 'required');
-			$this->form_validation->set_rules('NoiDung', 'Nội dung bài viết', 'required');
-			$this->form_validation->set_rules('Hinh', 'Ảnh đại diện bài viết', '');
-			$this->form_validation->set_rules('DanhMuc', 'Danh mục bài viết', '');
+			$this->form_validation->set_rules('title', 'Tiêu đề bài viết', 'required');
+			$this->form_validation->set_rules('description', 'Tóm tắt bài viết', 'required');
+			$this->form_validation->set_rules('content', 'Nội dung bài viết', 'required');
+			$this->form_validation->set_rules('image', 'Ảnh đại diện bài viết', '');
+			$this->form_validation->set_rules('category', 'Danh mục bài viết', '');
 			if ($this->form_validation->run() ) 
 			{
-				$title = $this->input->post('TieuDe');
-				$description = $this->input->post('TomTat');
-				$content = $this->input->post('NoiDung');
+				$title = $this->input->post('title');
+				$description = $this->input->post('description');
+				$content = $this->input->post('content');
 				$image =  $get_image['file_name'];
-				$category = $this->input->post('DanhMuc');
+				$category = $this->input->post('category');
 
-				$input = array('tieude'=>$title,'noidung'=>$content,'tomtat'=>$description,'hinhanh'=>$image,'id_danhmuc'=>$category);
+				$input = array('title'=>$title,'content'=>$content,'description'=>$description,'image'=>$image,'id_category'=>$category);
 				$this->post_model->update($id,$input);
 				$this->session->set_flashdata('messenger', 'Đã sửa thành công');
 
-				$get_post->tieude = $title;
-				$get_post->tomtat = $description;
-				$get_post->noidung = $content;
+				$get_post->title = $title;
+				$get_post->description = $description;
+				$get_post->content = $content;
 			}
 		}
 		$this->load->view('backend/index', $data);

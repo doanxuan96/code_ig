@@ -20,11 +20,10 @@
 					<td><?php echo $value->id ?></td>
 					<td>
 						<?php
-						$_id = $value->idUser;
-						$this->db->SELECT('user_name')->from('users')->where('id',$_id);
+						$get_id = $value->idUser;
+						$this->db->SELECT('user_name')->from('users')->where('id',$get_id);
 						$query = $this->db->get()->row();
 						echo $user = $query->user_name;
-						//var_dump($query);
 						?>
 					</td>
 					<td><?php echo $value->noidung ?></td>
@@ -34,7 +33,7 @@
 							<span class="slider round"></span>
 						</label>
 					</td>
-					<td class="center"><a href="<?php echo admin_url('comments/delete_cmt/'.$value->id) ?>">Delete</a></td>
+					<td class="center"><a href="<?php echo admin_url('comments/delete_comment/'.$value->id) ?>">Delete</a></td>
 				</tr>
 			<?php } ?>
 		</tbody>

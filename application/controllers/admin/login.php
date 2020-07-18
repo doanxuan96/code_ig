@@ -25,7 +25,6 @@ class Login extends My_Controller {
 	{
 		$user = $this->input->post('user');
 		$pass = $this->input->post('password');
-		//$where = array('user_name'->$user, 'password'->$password);
 		$where = array(
                 'user_name' => $user,
                 'password' => $pass,
